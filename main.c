@@ -3,24 +3,27 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-struct student{
-		int ID;
-		char name[10];
-		double grade;
-	};
+
 
 int main(int argc, char *argv[]) {
 	
-	struct student s1={24, "heesun", 4.3};
-	s1.ID=1916942;
-	strcpy(s1.name, "Heesun");
-	s1.grade=4.2;
+	FILE *fp;
+	char filepath[100];
 	
-	printf("ID:%d\n",s1.ID);
-	printf("name:%s\n",s1.name);
-	printf("grade:%f\n",s1.grade);
+	//file open
+	printf("input the file path: ");
+	scanf("%s",filepath);
+	fp = fopen(filepath, "r");
 	
+	if (fp==NULL)
+	{
+		printf("file path is wrong! %s\n", filepath);
+		return -1;
+	}
+	fclose(fp);
+	//word reading &analysis
 	
+	//output
 	
 	return 0;
 }
